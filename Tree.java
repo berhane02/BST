@@ -41,7 +41,7 @@ public class Tree {
 		/*
 		 * create new node to insert
 		 */
-		if(current == null){
+		/*if(current == null){
 			return new Node(n);
 		}
 		if(n<current.data){
@@ -51,8 +51,8 @@ public class Tree {
 			current.sum+=value;
 			current.right = Insert(current.right, n);
 		}
-		return current;
-		/*Node newNode = new Node(n);
+		return current;*/
+		Node newNode = new Node(n);
 		Node current;
 		Node newParent;
 		
@@ -84,7 +84,7 @@ public class Tree {
 						current.sum = current.sum+n;			
 					}
 				}
-		 }*/
+		 }
 		
 	}
 public boolean evenSumRange(long a, long b) {
