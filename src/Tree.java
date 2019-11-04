@@ -1,3 +1,4 @@
+//Yemane Berhane
 import java.io.File;
 import java.io.PrintStream;
 import java.util.Scanner;
@@ -16,20 +17,14 @@ public class Tree {
 			sum=d;
 		}
 	}
-	public class BinaryTree{
-		Node root;
-	}
-	public void add(int value){
-		root = Insert(root, value);
-	}
+	
 	public Tree(String string) {
 		File fileR = new File(string);
 		try {	
 			Scanner file = new Scanner(fileR);
-			//BinaryTree bt = new BinaryTree();
-			BST.add(Integer.parseInt(file.nextLine()));
+			Insert(Integer.parseInt(file.nextLine()));
 			while(file.hasNext()) {
-				BST.add(Integer.parseInt(file.nextLine()));
+				Insert(Integer.parseInt(file.nextLine()));
 			}
 			//close file after finish reading 
 			file.close();
@@ -37,21 +32,10 @@ public class Tree {
 			ex.printStackTrace();
 		}
 	}
-	private Node Insert(Node current, long n) {
+	private void Insert(long n) {
 		/*
 		 * create new node to insert
 		 */
-		/*if(current == null){
-			return new Node(n);
-		}
-		if(n<current.data){
-			current.sum+=value;
-			current.left = Insert(current.left, n);
-		}else{
-			current.sum+=value;
-			current.right = Insert(current.right, n);
-		}
-		return current;*/
 		Node newNode = new Node(n);
 		Node current;
 		Node newParent;
@@ -137,7 +121,6 @@ public void readRange(String k) {
 	try {
 		//FileWriter fw = new FileWriter("output");
 		Scanner input = new Scanner(file);
-		
 		//PrintWriter pw = new PrintWriter(fw);
 		//read until end of file 
 		while(input.hasNext()) {
